@@ -1,10 +1,10 @@
 import socket
 import os
 import time
-addr_info = socket.getaddrinfo("towel.blinkenlights.nl", 23)
-addr = addr_info[0][-1]
-s = socket.socket()
-s.connect(addr)
+address_info = socket.getaddrinfo("towel.blinkenlights.nl", 23)
+address = address_info[0][-1]
+sock = socket.socket()
+sock.connect(address)
 while True:
-    data = s.recv(500)
+    data = sock.recv(500)
     print(str(data, 'utf8'), end='')
